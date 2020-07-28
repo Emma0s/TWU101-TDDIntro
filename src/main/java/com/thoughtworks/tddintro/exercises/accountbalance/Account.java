@@ -1,8 +1,19 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
 public class Account {
-    public int amount = 100;
+    protected int amount;
+    public Account(int amount){
+        this.amount = amount;
+    }
+
     public int deposit(int depNum) {
-        return amount += depNum;
+        return this.amount += depNum;
     };
+
+    public int withdraw(int witNum) {
+        if (amount-witNum < 0){
+            return amount;
+        }
+        return amount -= witNum;
+    }
 }
