@@ -2,14 +2,14 @@ package com.thoughtworks.tddintro.exercises.factorial;
 
 public class Factorial {
     public Integer compute(int i) {
-        switch (i){
-            case 0:
-                return 1;
-            case 3:
-                return 6;
-            default:
-                return i;
+        if (i == 0){
+            return 1;
+        }else if (i == 3){
+            return 6;
+        }else if (i < 0){
+            throw new IllegalArgumentException();
+        }else {
+            return i;
         }
-
     }
 }
